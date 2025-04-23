@@ -1,58 +1,23 @@
 // Sidebar component
 import React from 'react';
+import SidebarHeader from './SidebarHeader';
+import SearchBar from '../common/SearchBar';
+import ChatList from '../chat/ChatList';
 
 export default function Sidebar() {
     // Sample data for chat list
     const chatList = [
-        { id: 1, name: 'John Doe', lastMessage: 'Hey, how are you?', time: '10:30 AM', unread: 2 },
-        { id: 2, name: 'Jane Smith', lastMessage: 'Meeting at 3pm', time: 'Yesterday', unread: 0 },
-        { id: 3, name: 'Team Alpha', lastMessage: 'New project discussion', time: 'Yesterday', unread: 5 },
-        { id: 4, name: 'Support', lastMessage: 'Your ticket has been resolved', time: 'Mon', unread: 0 },
+        { id: 1, conversationName: 'Project Planning', time: '10:30 AM' },
+        { id: 2, conversationName: 'Marketing Strategy', time: 'Yesterday' },
+        { id: 3, conversationName: 'Product Launch', time: 'Yesterday' },
+        { id: 4, conversationName: 'Technical Issues', time: 'Mon' },
     ];
 
     return (
         <div className="sidebar">
-            {/* Sidebar Header */}
-            <div className="sidebar-header">
-                <h1>Chats</h1>
-                <button className="icon-button">
-                    <span className="sr-only">New chat</span>
-                    {/* New chat icon placeholder */}
-                </button>
-            </div>
-
-            {/* Search Bar */}
-            <div className="search-container">
-                <input 
-                    type="text" 
-                    placeholder="Search chats..." 
-                    className="search-input"
-                />
-            </div>
-
-            {/* Chat List */}
-            <div className="chat-list">
-                {chatList.map(chat => (
-                    <div key={chat.id} className="chat-item">
-                        <div className="avatar-container">
-                            {/* Avatar placeholder */}
-                            <div className="avatar">{chat.name.charAt(0)}</div>
-                        </div>
-                        <div className="chat-item-content">
-                            <div className="chat-item-header">
-                                <h3 className="chat-item-name">{chat.name}</h3>
-                                <span className="chat-item-time">{chat.time}</span>
-                            </div>
-                            <div className="chat-item-footer">
-                                <p className="chat-item-last-message">{chat.lastMessage}</p>
-                                {chat.unread > 0 && (
-                                    <span className="unread-badge">{chat.unread}</span>
-                                )}
-                            </div>
-                        </div>
-                    </div>
-                ))}
-            </div>
+            <SidebarHeader />
+            <SearchBar placeholder="Search chats..." />
+            <ChatList chats={chatList} />
         </div>
     );
 } 
