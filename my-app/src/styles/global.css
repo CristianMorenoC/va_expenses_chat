@@ -4,7 +4,7 @@
 .app-container {
   display: flex;
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   overflow: hidden;
 }
 
@@ -12,6 +12,7 @@
 .main-content {
   display: flex;
   flex-direction: column;
+  width: 100%;
   height: 100vh;
   background-color: #f5f7fb;
 }
@@ -20,7 +21,6 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-  max-width: 1200px;
   margin: 0 auto;
   width: 100%;
   background-color: #fff;
@@ -120,6 +120,7 @@
   font-size: 14px;
   outline: none;
   transition: border-color 0.2s;
+  color: #000;
 }
 
 .message-input:focus {
