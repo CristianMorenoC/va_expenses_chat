@@ -1,15 +1,23 @@
 // ChatInput component 
 import React, { useState } from 'react';
 import { IoSend } from "react-icons/io5";
+import { sendMessage } from '../../services/messageService';
+
+
 
 export default function ChatInput() {
     const [message, setMessage] = useState('');
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if (message.trim()) {
-            console.log('Message submitted:', message);
-            setMessage('');
+            try {
+                const response = await sendMessage(message);
+                console.log('Response:', response);
+                setMessage('');
+            } catch (error) {
+                console.error('Error sending message:', error);
+            }
         }
     };
 

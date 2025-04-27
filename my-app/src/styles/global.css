@@ -189,6 +189,24 @@
   border-color: #0084ff;
 }
 
+.new-chat-btn {
+  background-color: #ffffff;
+  color: #555;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.new-chat-btn:hover {
+  background-color: #f5f7fb;
+}
+
 .chat-list {
   flex: 1;
   overflow-y: auto;
@@ -205,6 +223,17 @@
 
 .chat-item:hover {
   background-color: #f5f7fb;
+}
+
+.remove-chat-btn {
+  margin-left: auto;
+  padding: 2px 5px;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: #aaa;
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 .avatar-container {
